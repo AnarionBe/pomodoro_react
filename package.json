@@ -1,0 +1,24 @@
+{
+  "name": "pomodoro_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnarionBe/pomodoro_react.git"
+  },
+  "author": "Anarion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnarionBe/pomodoro_react/issues"
+  },
+  "homepage": "https://github.com/AnarionBe/pomodoro_react#readme",
+  "dependencies": {
+    "@becode/cli": "^0.4.2",
+    "parcel": "^1.11.0",
+    "react": "^16.7.0"
+  }
+}
