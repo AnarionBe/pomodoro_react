@@ -24212,71 +24212,6 @@ function Timer(props) {
     className: "timer"
   }, _react.default.createElement("span", null, TimeParser()));
 }
-},{"react":"../node_modules/react/index.js"}],"../src/components/ToggleButton.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = ToggleButton;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function ToggleButton(props) {
-  var displayState = function displayState() {
-    if (props.state) return "Reset";
-    return "Start";
-  };
-
-  return _react.default.createElement("div", {
-    className: "toggle button"
-  }, _react.default.createElement("button", {
-    className: "start",
-    onClick: props.onClick
-  }, displayState()));
-}
-},{"react":"../node_modules/react/index.js"}],"../src/components/IncrementButton.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = IncrementButton;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function IncrementButton(props) {
-  return _react.default.createElement("div", {
-    className: "increment button"
-  }, _react.default.createElement("button", {
-    className: "radiusTop",
-    onClick: props.onClick
-  }, "+"));
-}
-},{"react":"../node_modules/react/index.js"}],"../src/components/DecrementButton.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = DecrementButton;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function DecrementButton(props) {
-  return _react.default.createElement("div", {
-    className: "decrement button"
-  }, _react.default.createElement("button", {
-    className: "radiusBot",
-    onClick: props.onClick
-  }, "-"));
-}
 },{"react":"../node_modules/react/index.js"}],"../src/images/logo.png":[function(require,module,exports) {
 module.exports = "/logo.ab15dc59.png";
 },{}],"../src/components/Header.js":[function(require,module,exports) {
@@ -26361,30 +26296,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _Modal2.default;
 module.exports = exports["default"];
-},{"./components/Modal":"../node_modules/react-modal/lib/components/Modal.js"}],"../src/components/Modal.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Modal;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _reactModal = _interopRequireDefault(require("react-modal"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Modal(props) {
-  return _react.default.createElement(_reactModal.default, {
-    isOpen: true,
-    className: "modal",
-    overlayClassName: "Overlay"
-  }, _react.default.createElement("span", null, props.value), _react.default.createElement("div", {
-    className: "buttonsModal"
-  }, _react.default.createElement("button", null, "Close"), _react.default.createElement("button", null, "Restart")));
-}
-},{"react":"../node_modules/react/index.js","react-modal":"../node_modules/react-modal/lib/index.js"}],"../src/components/Button.js":[function(require,module,exports) {
+},{"./components/Modal":"../node_modules/react-modal/lib/components/Modal.js"}],"../src/components/Button.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26404,7 +26316,40 @@ var _default = function _default(props) {
 };
 
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"../src/components/Modal.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Modal;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactModal = _interopRequireDefault(require("react-modal"));
+
+var _Button = _interopRequireDefault(require("./Button"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Modal(props) {
+  _reactModal.default.setAppElement(document.getElementById("App"));
+
+  return _react.default.createElement(_reactModal.default, {
+    isOpen: true,
+    className: "modal",
+    overlayClassName: "Overlay"
+  }, _react.default.createElement("span", null, props.value), _react.default.createElement("div", {
+    className: "buttonsModal"
+  }, _react.default.createElement(_Button.default, {
+    onClick: props.leftButton,
+    value: "Close"
+  }), _react.default.createElement(_Button.default, {
+    onClick: props.rightButton,
+    value: "Restart"
+  })));
+}
+},{"react":"../node_modules/react/index.js","react-modal":"../node_modules/react-modal/lib/index.js","./Button":"../src/components/Button.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -26488,12 +26433,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _Timer = _interopRequireDefault(require("./Timer"));
 
-var _ToggleButton = _interopRequireDefault(require("./ToggleButton"));
-
-var _IncrementButton = _interopRequireDefault(require("./IncrementButton"));
-
-var _DecrementButton = _interopRequireDefault(require("./DecrementButton"));
-
 var _Header = _interopRequireDefault(require("./Header"));
 
 var _Modal = _interopRequireDefault(require("./Modal"));
@@ -26515,7 +26454,9 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Main(props) {
-  var _useState = (0, _react.useState)(1),
+  var defaultTime = 1500;
+
+  var _useState = (0, _react.useState)(defaultTime),
       _useState2 = _slicedToArray(_useState, 2),
       time = _useState2[0],
       setTime = _useState2[1]; // create default time to 20 minutes
@@ -26524,30 +26465,52 @@ function Main(props) {
   var _useState3 = (0, _react.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
       status = _useState4[0],
-      setStatus = _useState4[1]; //let modalOn = false;
+      setStatus = _useState4[1];
 
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      shown = _useState6[0],
+      setShown = _useState6[1];
 
-  var tmp = time;
+  var intervalID;
+  (0, _react.useEffect)(function () {
+    // => essayer de comprendre mieux que ça cette jolie merde
+    intervalID = setInterval(Action, 1000);
+    return function () {
+      clearInterval(intervalID);
+    };
+  });
 
-  var StartReset = function StartReset() {
-    if (!time) return;
-    setStatus(!status);
-    if (!status) window.intervalID = setInterval(action, 1000);else {
-      clearInterval(window.intervalID);
-      setTime(1200);
-    }
+  var Start = function Start() {
+    setStatus(true);
   };
 
-  var action = function action() {
+  var Reset = function Reset() {
+    setStatus(false);
+    setTime(defaultTime);
+  };
+
+  var Restart = function Restart() {
+    setShown(false);
+    Reset();
+    Start();
+  };
+
+  var Action = function Action() {
+    if (!status) return;
+
     if (time === 0) {
-      clearInterval(window.intervalID);
-      window.intervalID = null;
+      setStatus(false);
+      setShown(true);
       return;
     }
 
-    tmp--; // => well why do i need that ??? THIS IS SHIT HOLY CRAP
+    setTime(time - 1);
+  };
 
-    setTime(tmp);
+  var CountDown = function CountDown() {
+    console.log("time 1:" + time);
+    console.log("time 2:" + time);
   };
 
   var IncrementTime = function IncrementTime() {
@@ -26563,9 +26526,17 @@ function Main(props) {
     setTime(time - 60);
   };
 
+  var HideModal = function HideModal() {
+    setShown(!shown);
+  };
+
   return _react.default.createElement("div", {
     className: "main"
-  }, _react.default.createElement(_Header.default, null), _react.default.createElement("div", {
+  }, _react.default.createElement(_Header.default, null), shown && _react.default.createElement(_Modal.default, {
+    value: "What's next ?",
+    leftButton: HideModal,
+    rightButton: Restart
+  }), _react.default.createElement("div", {
     className: "timerZone"
   }, _react.default.createElement("div", {
     className: "display"
@@ -26578,7 +26549,7 @@ function Main(props) {
     value: "+",
     className: "increment radiusTop buttonHover"
   }), _react.default.createElement(_Button.default, {
-    onClick: StartReset,
+    onClick: status ? Reset : Start,
     value: status ? "Reset" : "Start",
     className: "toggle buttonHover"
   }), !status && _react.default.createElement(_Button.default, {
@@ -26587,7 +26558,7 @@ function Main(props) {
     className: "decrement radiusBot buttonHover"
   }))));
 }
-},{"react":"../node_modules/react/index.js","./Timer":"../src/components/Timer.js","./ToggleButton":"../src/components/ToggleButton.js","./IncrementButton":"../src/components/IncrementButton.js","./DecrementButton":"../src/components/DecrementButton.js","./Header":"../src/components/Header.js","./Modal":"../src/components/Modal.js","./Button":"../src/components/Button.js","./style.css":"../src/components/style.css"}],"../src/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Timer":"../src/components/Timer.js","./Header":"../src/components/Header.js","./Modal":"../src/components/Modal.js","./Button":"../src/components/Button.js","./style.css":"../src/components/style.css"}],"../src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -26628,7 +26599,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36315" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41971" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

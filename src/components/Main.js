@@ -1,37 +1,52 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Timer from "./Timer";
-import ToggleButton from "./ToggleButton";
-import IncrementButton from "./IncrementButton";
-import DecrementButton from "./DecrementButton";
 import Header from "./Header";
 import Modal from "./Modal";
 import Button from "./Button";
 import "./style.css";
 
 export default function Main(props) {
-    const [time, setTime] = useState(1); // create default time to 20 minutes
+    const defaultTime = 1500;
+    const [time, setTime] = useState(defaultTime); // create default time to 20 minutes
     const [status, setStatus] = useState(false);
-    //let modalOn = false;
-
-    let tmp = time;
-    const StartReset = () => {
-        if(!time) return;
-        setStatus(!status);
-        if(!status) window.intervalID = setInterval(action, 1000);
-        else {
-            clearInterval(window.intervalID);
-            setTime(1200);
+    const [shown, setShown] = useState(false);
+    let intervalID;
+    useEffect(() => { // => essayer de comprendre mieux que ça cette jolie merde
+        intervalID = setInterval(Action, 1000);
+        return () => {
+            clearInterval(intervalID);
         }
-    };
+    });
 
-    const action = () => {
+    const Start = () => {
+        setStatus(true);
+    }
+
+    const Reset = () => {
+        setStatus(false);
+        setTime(defaultTime);
+    }
+
+    const Restart = () => {
+        setShown(false);
+        Reset();
+        Start();
+    }
+
+    const Action = () => {
+        if(!status) return;
         if(time === 0) {
-            clearInterval(window.intervalID);
-            window.intervalID = null;
+            setStatus(false);
+            setShown(true);
             return;
         }
-        tmp--; // => well why do i need that ??? THIS IS SHIT HOLY CRAP
-        setTime(tmp);
+        setTime(time - 1);
+    }
+
+    const CountDown = () => {
+        console.log("time 1:" + time);
+        
+        console.log("time 2:" + time);
     }
 
     const IncrementTime = () => {
@@ -46,17 +61,21 @@ export default function Main(props) {
         setTime(time - 60);
     }
 
+    const HideModal = () => {
+        setShown(!shown);
+    }
+
     return(
         <div className="main">
-            {/* {window.intervalID && !time && (<Modal value="What's next ?"/>)} */}
             <Header/>
+            {shown && (<Modal value="What's next ?" leftButton={HideModal} rightButton={Restart}/>)}
             <div className="timerZone">
                 <div className="display">
                     <Timer time={time}/>
                 </div>
                 <div className="buttons">
                     {!status && (<Button onClick={IncrementTime} value="+" className="increment radiusTop buttonHover"/>)}
-                    <Button onClick={StartReset} value={status ? "Reset" : "Start"} className="toggle buttonHover"/>
+                    <Button onClick={status ? Reset : Start} value={status ? "Reset" : "Start"} className="toggle buttonHover"/>
                     {!status && (<Button onClick={DecrementTime} value="-" className="decrement radiusBot buttonHover"/>)}
                 </div>
             </div>
