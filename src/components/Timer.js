@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Timer(props) {
+export default (props) => {
     const TimeParser = () => {
         const mins = Math.floor(props.time / 60);
         const secs = props.time % 60;

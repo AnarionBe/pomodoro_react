@@ -2,7 +2,7 @@ import React from "react";
 import ReactModal from "react-modal";
 import Button from "./Button";
 
-export default function Modal(props) {
+export default (props) => {
     ReactModal.setAppElement(document.getElementById("App"));
     return(
         <ReactModal isOpen={true} className="modal" overlayClassName="Overlay">

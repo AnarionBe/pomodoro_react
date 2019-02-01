@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../images/logo.png"
 
-export default function Header(props) {
+export default (props) => {
     return(
         <img src={logo}/>
     );

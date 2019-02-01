@@ -4,9 +4,11 @@ import Header from "./Header";
 import Modal from "./Modal";
 import Button from "./Button";
 import "./style.css";
+import Sound from "../sound/sound.mp3";
+import Audio from "./Audio";
 
-export default function Main(props) {
-    const defaultTime = 1500;
+export default (props) => {
+    const defaultTime = 1;
     const [time, setTime] = useState(defaultTime); // create default time to 20 minutes
     const [status, setStatus] = useState(false);
     const [shown, setShown] = useState(false);
@@ -43,12 +45,6 @@ export default function Main(props) {
         setTime(time - 1);
     }
 
-    const CountDown = () => {
-        console.log("time 1:" + time);
-        
-        console.log("time 2:" + time);
-    }
-
     const IncrementTime = () => {
         setTime(time + 60);
     }
@@ -67,7 +63,8 @@ export default function Main(props) {
 
     return(
         <div className="main">
-            <Header/>
+            <Header />
+            {shown && (<Audio src={Sound} type="audio/mp3"/>)}
             {shown && (<Modal value="What's next ?" leftButton={HideModal} rightButton={Restart}/>)}
             <div className="timerZone">
                 <div className="display">

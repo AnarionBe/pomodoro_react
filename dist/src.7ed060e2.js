@@ -24194,13 +24194,13 @@ if ("development" === 'production') {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Timer;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Timer(props) {
+var _default = function _default(props) {
   var TimeParser = function TimeParser() {
     var mins = Math.floor(props.time / 60);
     var secs = props.time % 60;
@@ -24211,7 +24211,9 @@ function Timer(props) {
   return _react.default.createElement("div", {
     className: "timer"
   }, _react.default.createElement("span", null, TimeParser()));
-}
+};
+
+exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"../src/images/logo.png":[function(require,module,exports) {
 module.exports = "/logo.ab15dc59.png";
 },{}],"../src/components/Header.js":[function(require,module,exports) {
@@ -24220,7 +24222,7 @@ module.exports = "/logo.ab15dc59.png";
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Header;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -24228,11 +24230,13 @@ var _logo = _interopRequireDefault(require("../images/logo.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Header(props) {
+var _default = function _default(props) {
   return _react.default.createElement("img", {
     src: _logo.default
   });
-}
+};
+
+exports.default = _default;
 },{"react":"../node_modules/react/index.js","../images/logo.png":"../src/images/logo.png"}],"../node_modules/prop-types/factoryWithTypeCheckers.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -26322,7 +26326,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Modal;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -26332,7 +26336,7 @@ var _Button = _interopRequireDefault(require("./Button"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Modal(props) {
+var _default = function _default(props) {
   _reactModal.default.setAppElement(document.getElementById("App"));
 
   return _react.default.createElement(_reactModal.default, {
@@ -26348,7 +26352,9 @@ function Modal(props) {
     onClick: props.rightButton,
     value: "Restart"
   })));
-}
+};
+
+exports.default = _default;
 },{"react":"../node_modules/react/index.js","react-modal":"../node_modules/react-modal/lib/index.js","./Button":"../src/components/Button.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -26421,13 +26427,37 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/components/Main.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/sound/sound.mp3":[function(require,module,exports) {
+module.exports = "/sound.a1db528a.mp3";
+},{}],"../src/components/Audio.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Main;
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = function _default(props) {
+  return _react.default.createElement("audio", {
+    autoPlay: true
+  }, _react.default.createElement("source", {
+    src: props.src,
+    type: props.type
+  }));
+};
+
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"../src/components/Main.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -26441,6 +26471,10 @@ var _Button = _interopRequireDefault(require("./Button"));
 
 require("./style.css");
 
+var _sound = _interopRequireDefault(require("../sound/sound.mp3"));
+
+var _Audio = _interopRequireDefault(require("./Audio"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -26453,8 +26487,8 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function Main(props) {
-  var defaultTime = 1500;
+var _default = function _default(props) {
+  var defaultTime = 1;
 
   var _useState = (0, _react.useState)(defaultTime),
       _useState2 = _slicedToArray(_useState, 2),
@@ -26508,11 +26542,6 @@ function Main(props) {
     setTime(time - 1);
   };
 
-  var CountDown = function CountDown() {
-    console.log("time 1:" + time);
-    console.log("time 2:" + time);
-  };
-
   var IncrementTime = function IncrementTime() {
     setTime(time + 60);
   };
@@ -26532,7 +26561,10 @@ function Main(props) {
 
   return _react.default.createElement("div", {
     className: "main"
-  }, _react.default.createElement(_Header.default, null), shown && _react.default.createElement(_Modal.default, {
+  }, _react.default.createElement(_Header.default, null), shown && _react.default.createElement(_Audio.default, {
+    src: _sound.default,
+    type: "audio/mp3"
+  }), shown && _react.default.createElement(_Modal.default, {
     value: "What's next ?",
     leftButton: HideModal,
     rightButton: Restart
@@ -26557,8 +26589,10 @@ function Main(props) {
     value: "-",
     className: "decrement radiusBot buttonHover"
   }))));
-}
-},{"react":"../node_modules/react/index.js","./Timer":"../src/components/Timer.js","./Header":"../src/components/Header.js","./Modal":"../src/components/Modal.js","./Button":"../src/components/Button.js","./style.css":"../src/components/style.css"}],"../src/index.js":[function(require,module,exports) {
+};
+
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","./Timer":"../src/components/Timer.js","./Header":"../src/components/Header.js","./Modal":"../src/components/Modal.js","./Button":"../src/components/Button.js","./style.css":"../src/components/style.css","../sound/sound.mp3":"../src/sound/sound.mp3","./Audio":"../src/components/Audio.js"}],"../src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -26599,7 +26633,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41971" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42311" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
