@@ -16,7 +16,7 @@ var e=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0});var n=
 },{"./cjs/react-dom.production.min.js":"i17t"}],"w6ZS":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=t(require("react"));function t(e){return e&&e.__esModule?e:{default:e}}var a=function(t){var a,r;return e.default.createElement("div",{className:"timer"},e.default.createElement("span",null,(a=Math.floor(t.time/60),(r=t.time%60)<10?"".concat(a,":0").concat(r):"".concat(a,":").concat(r))))};exports.default=a;
 },{"react":"1n8/"}],"kxny":[function(require,module,exports) {
-module.exports="/logo.b3b5a21e.png";
+module.exports="logo.b3b5a21e.png";
 },{}],"7FRK":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=t(require("react")),r=t(require("../images/logo.png"));function t(e){return e&&e.__esModule?e:{default:e}}var u=function(t){return e.default.createElement("img",{src:r.default})};exports.default=u;
 },{"react":"1n8/","../images/logo.png":"kxny"}],"Asjh":[function(require,module,exports) {
@@ -57,7 +57,7 @@ var e;!function(){"use strict";var n=!("undefined"==typeof window||!window.docum
 },{"react":"1n8/","react-modal":"jAUu","./Button":"ZKJl"}],"AwJe":[function(require,module,exports) {
 
 },{}],"LKxt":[function(require,module,exports) {
-module.exports="/sound.ff6bcb3a.mp3";
+module.exports="sound.ff6bcb3a.mp3";
 },{}],"DviM":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=t(require("react"));function t(e){return e&&e.__esModule?e:{default:e}}var r=function(t){return e.default.createElement("audio",{autoPlay:!0},e.default.createElement("source",{src:t.src,type:t.type}))};exports.default=r;
 },{"react":"1n8/"}],"V6ag":[function(require,module,exports) {
@@ -65,4 +65,4 @@ module.exports="/sound.ff6bcb3a.mp3";
 },{"react":"1n8/","./Timer":"w6ZS","./Header":"7FRK","./Modal":"SR9Y","./Button":"ZKJl","./style.css":"AwJe","../sound/sound.mp3":"LKxt","./Audio":"DviM"}],"2u/B":[function(require,module,exports) {
 "use strict";var e=u(require("react")),r=u(require("react-dom")),t=u(require("./components/Main"));function u(e){return e&&e.__esModule?e:{default:e}}var n=document.getElementById("App");r.default.render(e.default.createElement(t.default,null),n);
 },{"react":"1n8/","react-dom":"NKHc","./components/Main":"V6ag"}]},{},["2u/B"], null)
-//# sourceMappingURL=/src.531e0167.map
+//# sourceMappingURL=src.531e0167.map
