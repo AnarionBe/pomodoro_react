@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/pomodoro_react/static/media/sound.22dd97f8.mp3"
   },
   {
-    "revision": "01db6c9f23b11903558f191166bf0e0a",
+    "revision": "ece0edef6b4e725510926104ef2cafa8",
     "url": "/pomodoro_react/index.html"
   }
 ];
