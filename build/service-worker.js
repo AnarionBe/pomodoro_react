@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/AnarionBe/pomodoro_react/precache-manifest.ea93f54ac86258128d589e4d96eea4a6.js"
+  "/pomodoro_react/precache-manifest.fbc32dd06de8c1ab27986f1e9b13adef.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/AnarionBe/pomodoro_react/index.html", {
+workbox.routing.registerNavigationRoute("/pomodoro_react/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

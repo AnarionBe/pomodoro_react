@@ -8,7 +8,7 @@ import Sound from "../sound/sound.mp3";
 import Audio from "./Audio";
 
 export default (props) => {
-    const defaultTime = 1;
+    const defaultTime = 1500;
     const [time, setTime] = useState(defaultTime); // create default time to 20 minutes
     const [status, setStatus] = useState(false);
     const [shown, setShown] = useState(false);

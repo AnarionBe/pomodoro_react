@@ -2,7 +2,7 @@
   "name": "pomodoro_react",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/AnarionBe/pomodoro_react",
+  "homepage": "https://anarionbe.github.io/pomodoro_react",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
