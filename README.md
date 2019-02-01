@@ -1,22 +1,16 @@
 # BeCode: pomodoro React
 
-> 🛰️ Short project's description
+> 🛰️ Custom pomodoro timer
 
 * * *
 
-A short abstract of the project, goals, context… Anything that should be useful for a future reader.
-
 ## About
 
-A more detailed description of the project, with technical details: used langages and techs, context, etc.
+Made with React 
 
-## Installation (if applicable)
+## Usage
 
-Details of process to install / setup dev environment for the project, if applicable.
-
-## Usage (if applicable)
-
-How to use the project, if applicable
+Go to [https://anarionbe.github.io/pomodoro_react](https://anarionbe.github.io/pomodoro_react) and enjoy.
 
 * * *
 
