@@ -21,7 +21,7 @@
     "url": "https://github.com/AnarionBe/pomodoro_react/issues"
   },
   "dependencies": {
-    "@becode/cli": "^0.4.2",
+    "@becode/cli": "^0.7.0",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "parcel": "^1.11.0",
