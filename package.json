@@ -27,7 +27,7 @@
     "parcel": "^1.11.0",
     "parcel-bundler": "^1.11.0",
     "react": "16.7.0-alpha.2",
-    "react-dom": "16.7.0-alpha.2",
+    "react-dom": "16.8.6",
     "react-modal": "^3.8.1",
     "react-script": "^2.0.5",
     "react-scripts": "^2.1.3",
